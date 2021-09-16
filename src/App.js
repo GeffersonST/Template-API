@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./style.css";
 //https://sujeitoprogramador.com/rn-api/?api=posts
 class App extends Component {
   constructor(props) {
@@ -22,12 +23,15 @@ class App extends Component {
   render() {
     return (
       <div className="container">
+        <header>
+          <strong>React Nutri</strong>
+        </header>
         {this.state.nutri.map((item) => {
           return (
-            <article key={item.id}>
-              <strong>{item.titulo}</strong>
-              <img src={item.capa} alt="" />
-              <p>{item.subtitulo}</p>
+            <article key={item.id} className="post">
+              <strong className="titulo">{item.titulo}</strong>
+              <img src={item.capa} alt="" className="capa" />
+              <p className="subtitulo">{item.subtitulo}</p>
               <a className="botao" href="#">
                 Acessar
               </a>
