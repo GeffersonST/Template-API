@@ -20,7 +20,22 @@ class App extends Component {
       });
   }
   render() {
-    return <div></div>;
+    return (
+      <div className="container">
+        {this.state.nutri.map((item) => {
+          return (
+            <article key={item.id}>
+              <strong>{item.titulo}</strong>
+              <img src={item.capa} alt="" />
+              <p>{item.subtitulo}</p>
+              <a className="botao" href="#">
+                Acessar
+              </a>
+            </article>
+          );
+        })}
+      </div>
+    );
   }
 }
 export default App;
